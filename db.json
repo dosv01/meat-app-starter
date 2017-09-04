@@ -370,5 +370,57 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "Rua Nova York",
+      "number": "609",
+      "optionalAddress": "34R",
+      "paymentOption": "MON",
+      "orderItem": [
+        {
+          "quantity": 1,
+          "menuId": "zlasagna"
+        },
+        {
+          "quantity": 1,
+          "menuId": "greensandwich"
+        },
+        {
+          "quantity": 1,
+          "menuId": "ceasar"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "Av. Padre Antonio",
+      "number": "100",
+      "optionalAddress": "Casa A",
+      "paymentOption": "DEB",
+      "orderItem": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "Rua Nova York",
+      "number": "609",
+      "optionalAddress": "AP 34R",
+      "paymentOption": "REF",
+      "orderItem": [
+        {
+          "quantity": 2,
+          "menuId": "burger"
+        },
+        {
+          "quantity": 2,
+          "menuId": "coke.png"
+        }
+      ],
+      "id": 3
+    }
+  ]
 }
