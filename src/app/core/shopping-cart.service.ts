@@ -1,5 +1,5 @@
-import { CartItem } from './cart-item.model';
-import { MenuItem } from '../menu-item/menu-item.model';
+import { MenuItem } from './../restaurant-detail/menu-item/menu-item.model';
+import { CartItem } from './../restaurant-detail/shopping-cart/cart-item.model';
 
 export class ShoppingCartService {
   items: CartItem[] = [];
@@ -13,14 +13,14 @@ export class ShoppingCartService {
     }
   }
 
-  increaseQty(item: CartItem){
-    item.quantity = item.quantity + 1
+  increaseQty(item: CartItem) {
+    item.quantity = item.quantity + 1;
   }
 
-  decreaseQty(item: CartItem){
-    item.quantity = item.quantity - 1
+  decreaseQty(item: CartItem) {
+    item.quantity = item.quantity - 1;
     if (item.quantity === 0){
-      this.removeItem(item)
+      this.removeItem(item);
     }
   }
 
@@ -37,5 +37,4 @@ export class ShoppingCartService {
       .map(item => item.value())
       .reduce((prev, value) => prev + value, 0);
   }
-  
 }

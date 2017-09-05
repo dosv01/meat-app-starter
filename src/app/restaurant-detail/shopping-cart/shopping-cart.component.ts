@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoppingCartService } from './shopping-cart.service';
+import { ShoppingCartService } from 'app/core/shopping-cart.service';
 
 @Component({
   selector: 'mt-shopping-cart',
@@ -12,7 +12,7 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit() {
   }
 
-  items(): any{
+  items(): any {
     return this.shoppingCartService.items;
   }
 
@@ -20,15 +20,15 @@ export class ShoppingCartComponent implements OnInit {
     return this.shoppingCartService.total();
   }
 
-  clear(){
+  clear() {
     this.shoppingCartService.clear();
   }
 
-  removeItem(item: any){
+  removeItem(item: any) {
     this.shoppingCartService.removeItem(item);
   }
 
-  addItem(item: any){
+  addItem(item: any) {
     this.shoppingCartService.addItem(item);
   }
 

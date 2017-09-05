@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ContentChild, AfterContentInit } from '@angular/core';
-import { NgModel } from '@angular/forms'
+import { NgModel, FormControlName } from '@angular/forms';
 
 @Component({
   selector: 'mt-input-container',
@@ -7,35 +7,36 @@ import { NgModel } from '@angular/forms'
 })
 export class InputComponent implements OnInit, AfterContentInit {
 
-  @Input() label: string
-  @Input() errorMessage: string
-  
-  input: any
+  @Input() label: string;
+  @Input() errorMessage: string;
 
-  @ContentChild(NgModel) model: NgModel
+  input: any;
+
+  @ContentChild(NgModel) model: NgModel;
+  @ContentChild(FormControlName) control: FormControlName;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  ngAfterContentInit(){
-    this.input = this.model
-    if (this.input === undefined){
-      throw new Error('Esse componente precisa ser usado com uma diretiva ngModel')
+  ngAfterContentInit() {
+    this.input = this.model || this.control;
+    if (this.input === undefined) {
+      throw new Error('Esse componente precisa ser usado com uma diretiva ngModel ou FormControlName');
     }
   }
 
-  hasManipulated(): boolean{
-    return (this.input.dirty || this.input.touched)
+  hasManipulated(): boolean {
+    return (this.input.dirty || this.input.touched);
   }
 
-  hasSuccess(): boolean{
-    return this.input.valid && (this.hasManipulated())
+  hasSuccess(): boolean {
+    return this.input.valid && (this.hasManipulated());
   }
 
-  hasError(): boolean{
-    return this.input.invalid && (this.hasManipulated())
+  hasError(): boolean {
+    return this.input.invalid && (this.hasManipulated());
   }
 
 }
