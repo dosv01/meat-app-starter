@@ -4,6 +4,8 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { ROUTES } from './app.routes';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 
@@ -18,6 +20,7 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
+import { NotificationService } from './shared/messages/notification.service';
 
 @NgModule({
   declarations: [
@@ -35,13 +38,15 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     SharedModule,
     HttpModule,
     CoreModule,
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
   ],
   providers: [
-    {provide: LOCALE_ID, useValue: 'pt-BR'}
+    {provide: LOCALE_ID, useValue: 'pt-BR'},
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })
