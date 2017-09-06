@@ -21,6 +21,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
 import { NotificationService } from './shared/messages/notification.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NotificationService } from './shared/messages/notification.service';
     RestaurantsComponent,
     RestaurantDetailComponent,
     ReviewsComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
